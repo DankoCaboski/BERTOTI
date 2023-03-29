@@ -3,9 +3,10 @@ public class Produto {
     private Double preco;
     private Localizacao localizacao;
 
-    public Produto(String nome, Double preco){
+    public Produto(String nome, Double preco, Localizacao localizacao){
         this.nome = nome;
         this.preco = preco;
+        this.localizacao = localizacao;
     }
 
     public void setLocalizacao(Localizacao localizacao) {
@@ -31,4 +32,5 @@ public class Produto {
     public Localizacao getLocalizacao() {
         return localizacao;
     }
+
 }

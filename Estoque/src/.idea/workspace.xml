@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9367b817-66e2-47cd-b4fe-fc4e29417eed" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Biblioteca/src/Acervo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Biblioteca/src/Livro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Estoque/Localizacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/Estoque/Localizacao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Estoque/Produto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/Estoque/Produto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Estoque/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Localizacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Localizacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Produto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Teste.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="2NfHw6bZSbVXMu4D0mg6DpAqwdi" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/danko/Documents/GitHub/BERTOTI/Biblioteca"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9367b817-66e2-47cd-b4fe-fc4e29417eed" name="Changes" comment="" />
+      <created>1680048451467</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1680048451467</updated>
+    </task>
+    <servers />
+  </component>
+</project>

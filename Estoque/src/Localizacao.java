@@ -7,4 +7,20 @@ public class Localizacao {
          this.corredor = corredor;
          this.estante = estante;
      }
+
+    public String getCorredor() {
+        return corredor;
+    }
+
+    public void setCorredor(String corredor) {
+        this.corredor = corredor;
+    }
+
+    public int getEstante() {
+        return estante;
+    }
+
+    public void setEstante(int estante) {
+        this.estante = estante;
+    }
 }
