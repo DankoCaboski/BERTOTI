@@ -1,30 +1,35 @@
-package Cliente;
+package Aplicacao.Cliente;
 
-import Back.Models.Cardapio;
-import Back.Models.Mesa;
-import Back.Models.Salao;
-import Back.Pedido;
+import Aplicacao.Back.Models.Mesa;
+import Aplicacao.Back.Models.Cardapio;
+import Aplicacao.Back.Models.Pedido;
+import Aplicacao.Back.Models.Salao;
+
 
 import java.util.Scanner;
 
 public class Cliente {
+    public Mesa mesa = new Mesa();
 
     public static void painelCliente(){
         System.out.println("Bem vindo cliente!");
         System.out.println("'1' para pedir mesa, '2' para cardapio");
         System.out.println("'3' para fazer pedido, '4' para fechar conta");
 
-        if(escolha()==1){
-            pedirMesa();
-        }
-        if(escolha()==2){
-            cardapio();
-        }
-        if(escolha()==3){
+        switch (escolha()) {
+            case 1: {
+                pedirMesa();
+            }
 
-        }
-        if(escolha()==4){
-
+            case 2: {
+                pedirCardapio();
+            }
+            case 3: {
+                fazerPedido();
+            }
+            case 4: {
+                fecharConta();
+            }
         }
     }
 
@@ -54,16 +59,16 @@ public class Cliente {
 
         System.out.println("Mesa reservada!");
     }
-    private static void cardapio(){
+    private static void pedirCardapio(){
         System.out.println("Pratos da casa:");
         for (Pedido prato : Cardapio.getCardapio()){
             System.out.println(prato.getNome()+" R$"+ prato.getPreco());
         }
     }
-    private void fazerPedido(Pedido pedido, int qunatidade){
-
+    private static void fazerPedido(){
+        System.out.println("Informe o nome do pedido e a quantidade");
     }
-    private void fecharConta(){
+    private static void fecharConta(){
 
     }
 }

@@ -1,9 +1,9 @@
 package Aplicacao;
 
 
-import Back.Login;
-import Cliente.Cliente;
-import Funcionario.Funcionario;
+import Aplicacao.Back.Login;
+import Aplicacao.Cliente.Cliente;
+import Aplicacao.Funcionario.Funcionario;
 
 public class Aplication {
     public static void main(String[] args) {

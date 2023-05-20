@@ -1,4 +1,4 @@
-package Back;
+package Aplicacao.Back.Models;
 
 public class Pedido {
     String nome;

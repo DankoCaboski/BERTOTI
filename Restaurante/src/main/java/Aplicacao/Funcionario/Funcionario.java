@@ -1,6 +1,4 @@
-package Funcionario;
-
-import Back.Pedido;
+package Aplicacao.Funcionario;
 
 public class Funcionario {
 
