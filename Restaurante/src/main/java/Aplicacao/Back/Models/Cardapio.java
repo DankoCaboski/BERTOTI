@@ -20,4 +20,12 @@ public class Cardapio {
         }
         return cardapio;
     }
+    public static Pedido getPedido(String pedido) {
+        for (Pedido i : cardapio) {
+            if (i.getNome().equals(pedido)) {
+                return cardapio.get(cardapio.indexOf(i));
+            }
+        }
+        return null;
+    }
 }

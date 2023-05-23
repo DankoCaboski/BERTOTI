@@ -6,8 +6,8 @@ import Aplicacao.Cliente.Cliente;
 import Aplicacao.Funcionario.Funcionario;
 
 public class Aplication {
+    static  Login login = new Login();
     public static void main(String[] args) {
-        Login login = new Login();
         if(login.inicializar()){
             Funcionario.painelFuncionario();
         }

@@ -38,8 +38,8 @@ public class Mesa {
         return pedidosdamesa;
     }
 
-    public void setPedidosdamesa(List<Pedido> pedidosdamesa) {
-        this.pedidosdamesa = pedidosdamesa;
+    public void setPedidosdamesa(Pedido pedido) {
+        this.pedidosdamesa.add(pedido);
     }
 
 }

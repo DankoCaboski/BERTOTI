@@ -6,11 +6,12 @@ import Aplicacao.Back.Models.Pedido;
 import Aplicacao.Back.Models.Salao;
 
 
+import java.awt.*;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Cliente {
-    public Mesa mesa = new Mesa();
-
+    public static Mesa minhamesa = new Mesa();
     public static void painelCliente(){
         System.out.println("Bem vindo cliente!");
         System.out.println("'1' para pedir mesa, '2' para cardapio");
@@ -50,9 +51,11 @@ public class Cliente {
         }
 
         System.out.print("Informe o número da mesa: ");
+        int escolha = escolha();
         for(Mesa mesa : Salao.getMesas()){
             if(mesa.getNmesa() == escolha()){
                 mesa.setNpessoas(pessoas);
+                minhamesa = Salao.getMesas().get(escolha);
                 break;
             }
         }
@@ -64,6 +67,8 @@ public class Cliente {
         for (Pedido prato : Cardapio.getCardapio()){
             System.out.println(prato.getNome()+" R$"+ prato.getPreco());
         }
+        System.out.println("Informe o prato");
+        minhamesa.setPedidosdamesa(Cardapio.getPedido(leitor.nextLine()));
     }
     private static void fazerPedido(){
         System.out.println("Informe o nome do pedido e a quantidade");
