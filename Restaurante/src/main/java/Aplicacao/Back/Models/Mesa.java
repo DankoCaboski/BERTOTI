@@ -38,8 +38,16 @@ public class Mesa {
         return pedidosdamesa;
     }
 
-    public void setPedidosdamesa(Pedido pedido) {
-        this.pedidosdamesa.add(pedido);
+    public void setPedidosdamesa(String pedido) {
+        this.pedidosdamesa.add(Cardapio.getPrato(pedido));
+    }
+
+    public void imprimePedidos() {
+        if (pedidosdamesa.size() != 0) {
+            for (Pedido pedido : pedidosdamesa) {
+                System.out.println(pedido.getNome());
+            }
+        }
     }
 
 }

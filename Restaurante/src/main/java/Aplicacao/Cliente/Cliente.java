@@ -20,16 +20,20 @@ public class Cliente {
         switch (escolha()) {
             case 1: {
                 pedirMesa();
+                break;
             }
 
             case 2: {
                 pedirCardapio();
+                break;
             }
             case 3: {
                 fazerPedido();
+                break;
             }
             case 4: {
                 fecharConta();
+                break;
             }
         }
     }
@@ -67,13 +71,33 @@ public class Cliente {
         for (Pedido prato : Cardapio.getCardapio()){
             System.out.println(prato.getNome()+" R$"+ prato.getPreco());
         }
-        System.out.println("Informe o prato");
-        minhamesa.setPedidosdamesa(Cardapio.getPedido(leitor.nextLine()));
+        System.out.println("Digite 1 parar fazer um pedido");
+        String fazerpedido = null;
+        leitor.nextLine();
+        while(fazerpedido == null) {
+            fazerpedido = leitor.nextLine();
+        }
+        if(fazerpedido.equals("1")){
+            minhamesa.setPedidosdamesa(fazerPedido());
+        }
     }
-    private static void fazerPedido(){
+    private static String fazerPedido(){
+        leitor.nextLine();
         System.out.println("Informe o nome do pedido e a quantidade");
+        return leitor.nextLine();
     }
     private static void fecharConta(){
-
+        Double conta = null;
+        for(Pedido pedido :  minhamesa.getPedidosdamesa()){
+            conta = conta + pedido.getPreco();
+        }
+        if (conta.toString() != null && conta >= 50){
+            double percentual = 10.00;
+            conta = conta - (percentual/100); //concede 10% de desconto
+        }if(conta.isNaN()){
+            System.out.println("Nada foi consumido");
+        }else {
+            System.out.println("Valor total da conta: " + conta);
+        }
     }
 }

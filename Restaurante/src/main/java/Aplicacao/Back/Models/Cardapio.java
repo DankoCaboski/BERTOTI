@@ -12,7 +12,7 @@ public class Cardapio {
         if (!ini) {
             for (int i = 0; i < 30; i++) {
                 Pedido pedido = new Pedido();
-                pedido.setNome("Prato"+String.valueOf(i+1));
+                pedido.setNome("Prato"+ (i + 1));
                 pedido.setPreco(Double.valueOf(i+1));
                 cardapio.add(pedido);
             }
@@ -20,12 +20,14 @@ public class Cardapio {
         }
         return cardapio;
     }
-    public static Pedido getPedido(String pedido) {
+    public static Pedido getPrato(String pedido) {
+        Pedido retorno = new Pedido();
         for (Pedido i : cardapio) {
             if (i.getNome().equals(pedido)) {
-                return cardapio.get(cardapio.indexOf(i));
+                retorno =  i;
+                break;
             }
         }
-        return null;
+        return retorno;
     }
 }

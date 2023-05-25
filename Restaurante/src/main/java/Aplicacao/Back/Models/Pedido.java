@@ -1,9 +1,9 @@
 package Aplicacao.Back.Models;
 
 public class Pedido {
-    String nome;
-    int pessoasserve;
-    Double preco;
+    private String nome;
+    private int pessoasserve;
+    private Double preco;
 
     public String getNome() {
         return nome;
