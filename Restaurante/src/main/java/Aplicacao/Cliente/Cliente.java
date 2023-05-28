@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Cliente {
-    public static Mesa minhamesa = new Mesa();
+    public static Mesa minhamesa;
     public static void painelCliente(){
         System.out.println("Bem vindo!");
         System.out.println("'1' para pedir mesa, '2' para cardapio");
@@ -42,11 +42,11 @@ public class Cliente {
     private static int  escolha(){
         return leitor.nextInt();
     }
-    private static String  decisao() {
+    private static String decisao() {
         leitor.nextLine();
         String decisao = leitor.nextLine().toLowerCase();
         if (decisao.equals("s") || decisao.equals("n")) {
-            return decisao.toLowerCase();
+            return decisao;
         }else {
             System.out.println("Caracter invalido");
             return null;
@@ -64,64 +64,114 @@ public class Cliente {
             }
         }
 
-        System.out.print("Informe o número da mesa: ");
+        System.out.println("Informe o número da mesa: ");
         int escolha = escolha();
         for(Mesa mesa : Salao.getMesas()){
-            if(mesa.getNmesa() == escolha()){
+            if(mesa.getNmesa() == escolha){
+                minhamesa = mesa;
                 mesa.setNpessoas(pessoas);
-                minhamesa = Salao.getMesas().get(escolha);
                 break;
             }
         }
 
-        System.out.println("Mesa reservada!");
+        System.out.println("Mesa "+minhamesa.getNmesa()+ " reservada!");
     }
     private static void pedirCardapio() {
         System.out.println("Pratos da casa:");
         for (Pedido prato : Cardapio.getCardapio()) {
             System.out.println(prato.getNome() + " R$" + prato.getPreco());
         }
-        if (minhamesa.isNotOccupied()) {
+        if (minhamesa == null) {
             System.out.println("Para pedir um prato você precisa escolher uma mesa");
             System.out.println("Pedir mesa? (s/n)");
             if (decisao().equals("s")) {
                 System.out.println("Pedir mesa");
                 pedirMesa();
+                pedirCardapio();
+
             }
             if (decisao().equals("n")) {
                 System.out.println("Saindo");
                 painelCliente();
             }
-        }
-        else{
+        } else {
+            leitor.nextLine();
             System.out.println("Pedir prato (s/n)");
-            if (decisao().equals("s")) {
-                minhamesa.setPedidosdamesa(fazerPedido());
-            }
-            if (decisao().equals("n")) {
-                System.out.println("Saindo");
-                painelCliente();
+            switch (leitor.nextLine().toLowerCase()) {
+                case "s": {
+                    LinkedList<String> pedidos = fazerPedido();
+                    System.out.println("Aqui");
+                    minhamesa.setPedidosdamesa(pedidos);
+                    break;
+                }
+                case "n": {
+                    System.out.println("Saindo");
+                    painelCliente();
+                }
             }
         }
     }
-    private static List fazerPedido(){
-        leitor.nextLine();
-        List<String> pedidos = new LinkedList<String>();
-        System.out.println("Informe o nome do pedido");
-        pedidos.add(leitor.nextLine());
+    private static LinkedList<String> pedidos = new LinkedList<String>();
+    private static LinkedList<String> fazerPedido() {
+        if (minhamesa == null) {
+            System.out.println("Para fazer pedido você precisa de uma mesa");
+            System.out.println("Pedirr mesa(s/n)");
+            switch (leitor.nextLine().toLowerCase()) {
+                case "s": {
+                    System.out.println("Pedir mesa");
+                    pedirMesa();
+                }
+                case "n": {
+                    System.out.println("Saindo");
+                    painelCliente();
+                }
+            }
+        } else {
+            leitor.nextLine();
+            System.out.println("Cardapio:");
+            for(Pedido prato:Cardapio.getCardapio()){
+                System.out.println(prato.getNome());
+            }
+            System.out.println("Informe o nome do pedido");
+            pedidos.add(leitor.nextLine());
+            pedidos.addAll(novoPedido());
+            System.out.println("Anotado(s) "+pedidos.size()+" pedido(S)");
 
+        }
+        return pedidos;
+    }
+    private static List<String> novoPedido() {
+        List<String> pedidos = new LinkedList<String>();
+        pedidos.clear();
+        System.out.println("Mais algum pedido?(s/n)");
+        switch (leitor.nextLine().toLowerCase()){
+            case "n":{
+                return pedidos;
+            }
+            case "s":{
+                String decisao = "s";
+                while (decisao.equals("s")) {
+                    System.out.println("Informe o nome do pedido");
+                    pedidos.add(leitor.nextLine());
+                    System.out.println("Mais algum pedido?(s/n)");
+                    decisao = leitor.nextLine().toLowerCase();
+                }
+            }
+        }
         return pedidos;
     }
     private static void fecharConta(){
         Double conta = 0.0;
         double zero = 0.0;
-        for(Pedido pedido :  minhamesa.getPedidosdamesa()){
-            conta = conta + pedido.getPreco();
-        }
-        if (!conta.equals(zero) && conta >= 50){
-            double percentual = 10.00;
-            conta = conta - (percentual/100); //concede 10% de desconto
-        }if(conta.equals(zero)){
+        if(minhamesa!=null) {
+            for (Pedido pedido : minhamesa.getPedidosdamesa()) {
+                conta = conta + pedido.getPreco();
+            }
+            if (!conta.equals(zero) && conta >= 50) {
+                double percentual = 10.00;
+                conta = conta - (percentual / 100); //10% de desconto
+            }
+        }if(conta.equals(zero)||minhamesa==null){
             System.out.println("Nada foi consumido");
         }else {
             System.out.println("Valor total da conta: " + conta);

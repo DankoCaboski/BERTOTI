@@ -38,7 +38,7 @@ public class Mesa {
         return pedidosdamesa;
     }
 
-    public void setPedidosdamesa(List<String> pedidos) {
+    public void setPedidosdamesa(LinkedList<String> pedidos) {
         for (String pedido : pedidos) {
             this.pedidosdamesa.add(Cardapio.getPrato(pedido));
         }
