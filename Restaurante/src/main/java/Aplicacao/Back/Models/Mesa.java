@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Mesa {
-    Integer npessoas;
+    Integer npessoas = 0;
     int nmesa;
     private List<Pedido> pedidosdamesa = new LinkedList();
     private List<Cliente> clientes  = new LinkedList<Cliente>();
@@ -27,7 +27,7 @@ public class Mesa {
         this.nmesa = nmesa;
     }
 
-    public boolean isOcuped(){
+    public boolean isNotOccupied(){
         if(npessoas>0) return false;
         else{
             return true;
@@ -38,8 +38,10 @@ public class Mesa {
         return pedidosdamesa;
     }
 
-    public void setPedidosdamesa(String pedido) {
-        this.pedidosdamesa.add(Cardapio.getPrato(pedido));
+    public void setPedidosdamesa(List<String> pedidos) {
+        for (String pedido : pedidos) {
+            this.pedidosdamesa.add(Cardapio.getPrato(pedido));
+        }
     }
 
     public void imprimePedidos() {

@@ -10,3 +10,5 @@ A engenharia de software consiste na preocupação com a escalabilidade de uma a
 2.2- Não-funcionais?
     São requisitos muito mais tecnicos, que não necessariamente são perceptiveis durante o uso da aplicação.
 2.3- De dois exemplos de trade-offs em requisitos não-funcionais
+    Primeiro exemplo: Segurança vs usabilidade, um programa com rigorosos sistemas de segurança pode ter limitações de usabilidade, UX, e tempo de resposta
+    Segundo exemplo: Disponibilidade vs escalabilidade: Garantir alta disponibilidade de um software pode requerer a duplicação de servidores e recursos, o que pode limitar a escalabilidade.
