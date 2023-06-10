@@ -1,5 +1,6 @@
 package Aplicacao.Back.Models;
 
+import java.nio.charset.StandardCharsets;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -22,10 +23,18 @@ public class Cardapio {
     }
     public static Pedido getPrato(String pedido) {
         Pedido retorno = new Pedido();
+        String nomeretorno;
+        getCardapio();
         for (Pedido i : cardapio) {
             if (i.getNome().equals(pedido)) {
-                retorno =  i;
+                retorno.setNome(i.getNome());
+                retorno.setPreco(i.getPreco());
                 break;
+            }
+            if(i.getNome().equals(cardapio.get(cardapio.size()-1).getNome()) && !i.getNome().equals(pedido)){
+                nomeretorno = "PratoNaoCadastrado";
+                retorno.setNome(nomeretorno);
+                retorno.setPreco(null);
             }
         }
         return retorno;

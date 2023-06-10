@@ -17,6 +17,8 @@ public class Cliente {
         System.out.println("'1' para pedir mesa, '2' para cardapio");
         System.out.println("'3' para fazer pedido, '4' para fechar conta");
 
+        leitor.nextLine();
+
         switch (escolha()) {
             case 1: {
                 pedirMesa();
@@ -95,12 +97,12 @@ public class Cliente {
                 painelCliente();
             }
         } else {
-            leitor.nextLine();
             System.out.println("Pedir prato (s/n)");
-            switch (leitor.nextLine().toLowerCase()) {
+            leitor.nextLine();
+            String decisao = leitor.nextLine().toLowerCase();
+            switch (decisao) {
                 case "s": {
                     LinkedList<String> pedidos = fazerPedido();
-                    System.out.println("Aqui");
                     minhamesa.setPedidosdamesa(pedidos);
                     break;
                 }
@@ -110,20 +112,25 @@ public class Cliente {
                 }
             }
         }
+        System.out.println("saiu");
     }
     private static LinkedList<String> pedidos = new LinkedList<String>();
     private static LinkedList<String> fazerPedido() {
         if (minhamesa == null) {
             System.out.println("Para fazer pedido você precisa de uma mesa");
             System.out.println("Pedirr mesa(s/n)");
-            switch (leitor.nextLine().toLowerCase()) {
+            leitor.nextLine();
+            String decisao = leitor.nextLine().toLowerCase();
+            switch (decisao) {
                 case "s": {
                     System.out.println("Pedir mesa");
                     pedirMesa();
+                    pedirCardapio();
                 }
                 case "n": {
                     System.out.println("Saindo");
                     painelCliente();
+                    leitor.nextLine();
                 }
             }
         } else {
