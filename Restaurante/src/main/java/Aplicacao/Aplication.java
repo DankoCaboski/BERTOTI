@@ -12,7 +12,8 @@ public class Aplication {
             Funcionario.painelFuncionario();
         }
         else {
-            Cliente.painelCliente();
+            Cliente cliente = new Cliente();
+            cliente.painelCliente();
         }
     }
 }

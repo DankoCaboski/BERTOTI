@@ -18,6 +18,15 @@ public class Salao {
         }
         return mesas;
     }
+    public static Mesa locMesa(Integer nproc){
+        getMesas();
+        for(Mesa loc : mesas){
+            if(loc.getNmesa() == nproc){
+                break;
+            }
+        }
+        return mesas.get(nproc);
+    }
 }
 
 
