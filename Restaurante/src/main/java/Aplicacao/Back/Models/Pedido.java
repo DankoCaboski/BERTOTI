@@ -2,7 +2,7 @@ package Aplicacao.Back.Models;
 
 public class Pedido {
     private String nome;
-    private int pessoasserve;
+    private int pessoasserve = 0;
     private Double preco;
 
     public String getNome() {
@@ -17,7 +17,10 @@ public class Pedido {
         return pessoasserve;
     }
 
-    public void setPessoasserve(int pessoasserve) {
+    public void setPessoasserve(Integer pessoasserve) {
+        if(pessoasserve == null){
+            pessoasserve=0;
+        }
         this.pessoasserve = pessoasserve;
     }
 
