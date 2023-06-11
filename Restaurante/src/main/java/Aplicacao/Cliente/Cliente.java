@@ -22,6 +22,9 @@ public class Cliente {
         System.out.println("'3' para fazer pedido, '4' para fechar conta");
 
         switch (escolha()) {
+            case 0:{
+                painelCliente();
+            }
             case 1: {
                 pedirMesa();
                 break;
@@ -39,12 +42,24 @@ public class Cliente {
                 fecharConta();
                 break;
             }
+            default:{
+                System.out.println("Caracter invalido ");
+                leitor.nextLine();
+                painelCliente();
+            }
         }
     }
 
     private static Scanner leitor = new Scanner(System.in);
     private static int  escolha(){
-        return leitor.nextInt();
+        try {
+            return leitor.nextInt();
+        }
+        catch (Exception e) {
+            System.out.println("Caracter invalido ");
+            leitor.nextLine();
+            return 0;
+        }
     }
     private static String decisao() {
         leitor.nextLine();
@@ -69,14 +84,32 @@ public class Cliente {
 
         System.out.println("Informe o número da mesa: ");
         int nmesa = escolha();
-        for(Mesa mesa : Salao.getMesas()){
-            if(mesa.getNmesa() == nmesa){
+        while(!Salao.locMesa(nmesa).isNotOccupied()) {
+            System.out.println("Essa mesa já foi o cupada");
+            System.out.println("Escolha uma das mesas abaixo:");
+            for (Mesa disponivel : Salao.getMesas()) {
+                if (disponivel.isNotOccupied()) {
+                    System.out.println(disponivel.getNmesa());
+                }
+            }
+            System.out.println("digite 'c' para cancelar");
+            leitor.nextLine();
+            if (leitor.nextLine().equals("c")) {
+                painelCliente();
+            } else {
+                leitor.nextLine();
+                System.out.println("Informe o número da mesa:");
+                nmesa = escolha();
+            }
+        }
+        for (Mesa mesa : Salao.getMesas()) {
+            if (mesa.getNmesa() == nmesa) {
                 minhamesa(nmesa).setNpessoas(npessoas);
+                System.out.println("Mesa "+nmesa+ " reservada!");
                 break;
             }
         }
-
-        System.out.println("Mesa "+nmesa+ " reservada!");
+        painelCliente();
     }
     private void pedirCardapio() {
         System.out.println("Pratos da casa:");
@@ -104,22 +137,27 @@ public class Cliente {
                 case "s": {
                     LinkedList<String> pedidos = fazerPedido();
                     minhamesaIns.setPedidosdamesa(pedidos);
+                    System.out.println("Pedidos adicionados");
                     break;
                 }
                 case "n": {
                     System.out.println("Saindo");
                     painelCliente();
                 }
+
+                default:{
+                    System.out.println("Comando inválido");
+                    painelCliente();
+                }
             }
         }
-        System.out.println("saiu");
+        painelCliente();
     }
     private static LinkedList<String> pedidos = new LinkedList<String>();
     private LinkedList<String> fazerPedido() {
         if (minhamesaIns == null) {
             System.out.println("Para fazer pedido você precisa de uma mesa");
-            System.out.println("Pedirr mesa(s/n)");
-            leitor.nextLine();
+            System.out.println("Pedir mesa(s/n)");
             String decisao = leitor.nextLine().toLowerCase();
             switch (decisao) {
                 case "s": {
