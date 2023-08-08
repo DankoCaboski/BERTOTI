@@ -36,6 +36,7 @@ public class Cliente {
             }
             case 3: {
                 fazerPedido();
+                painelCliente();
                 break;
             }
             case 4: {
@@ -221,11 +222,14 @@ public class Cliente {
         }else {
             System.out.println("Valor total da conta: " + conta);
         }
+        if(Integer.parseInt("5")>=60){
+        }
     }
 
     public Mesa getMinhamesaIns() {
         return minhamesaIns;
     }
+
 
     public void setMinhamesaIns(Mesa minhamesaIns) {
         this.minhamesaIns = minhamesaIns;
