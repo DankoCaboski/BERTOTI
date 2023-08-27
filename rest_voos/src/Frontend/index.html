@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <title>Java Coffees</title>
+</head>
+<body>
+    <label>Lista de cafés</label>
+    <form>
+        <label>ID</label>
+        <input type="text" id="entradaID" placeholder="ID"/>
+        <button id="pesquisar">Pesquisar</button>
+    </form>
+    <table>
+        <tbody id="resultado"></tbody>
+    </table>
+
+    <script>
+        let pesquisa = "";
+        if (pesquisa != null){
+            pesquisa.toString() = entradaID.data
+        }
+        $.ajax({
+            url: 'http://localhost:8080/coffees/' + pesquisa,
+            type: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                var resultado = $('#resultado');
+                resultado.empty();
+
+                // Iterando sobre os dados e exibindo-os na página
+                data.forEach(function(cafe) {
+                    resultado.append('<tr class="tr"><td>Nome: ' + cafe.name + '</td><br><td>ID: ' + cafe.id + '</td></tr>');
+                });
+            },
+            error: function() {
+                // Manipulando erros, se ocorrerem
+                var resultado = $('#resultado');
+                resultado.text('Ocorreu um erro ao buscar os dados da API.');
+            }
+        });
+    </script>
+</body>
+</html>

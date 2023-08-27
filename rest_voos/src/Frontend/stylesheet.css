@@ -1,0 +1,5 @@
+tr{
+    display: flex;
+    justify-content: row;
+    font-size: 8px;
+}
