@@ -25,7 +25,9 @@ class Rotas {
 	private List<Voo> voos = new ArrayList<>();
 
 	public Rotas() {
-		voos.add(new Voo());
+		for(int i = 0; i<10; i++){
+			voos.add(new Voo());
+		}
 	}
 
 	@GetMapping
