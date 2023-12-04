@@ -1,3 +1,6 @@
 [submodule "meu_primeiro_rest/restfull_estacionamento"]
 	path = meu_primeiro_rest/restfull_estacionamento
 	url = https://github.com/DankoCaboski/restfull_estacionamento
+[submodule "VIPConcert"]
+	path = VIPConcert
+	url = https://github.com/DankoCaboski/VIPConcert.git
