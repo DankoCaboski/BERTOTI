@@ -1,1 +1,3 @@
 UML
+
+anti patter - herança
