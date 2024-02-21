@@ -1,3 +1,4 @@
+package java;
 public class teste {
     public static void main(String[] args) {
         Cliente cliente = new Cliente();
