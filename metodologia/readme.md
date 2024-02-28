@@ -152,4 +152,7 @@ Nos foi proposto o desafio de desenvolvermos para o cliente uma plataforma web p
   </tbody>
 </table>
 
+## Imagens do programa
+
+![usuarios-adm](./assets/images/usuarios-adm.png)
 
