@@ -1,9 +1,19 @@
 # Sobre mim
 
-Willian Danko, graduando em banco de dados [![Linkedin Badge](https://img.shields.io/badge/Linkedin-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/willian-danko-leite-caboski-5410741b4) [![GitHub Badge](https://img.shields.io/badge/GitHub-111217?style=flat-square&logo=github&logoColor=white)](https://github.com/DankoCaboski)
+Willian Danko, graduando em banco de dados
+
+[![Linkedin Badge](https://img.shields.io/badge/Linkedin-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/willian-danko-leite-caboski-5410741b4) [![GitHub Badge](https://img.shields.io/badge/GitHub-111217?style=flat-square&logo=github&logoColor=white)](https://github.com/DankoCaboski)
+
+## Contribuições Pessoais
+Durante o desenvolvimento deste projeto, fui responsável pela otimização das chamadas ao backend e ao banco de dados, resultando em tempos de carregamento e respostas mais rápidos. Além disso, contribuí para o planejamento da arquitetura do lado do servidor, tornando o projeto mais escalável e seguro. Também participei do desenvolvimento de funcionalidades como a gestão de equipes, extração de relatórios e o lançamento de horas extras pelos colaboradores.
+
+## Hard Skills Efetivamente Desenvolvidas
+- Spring security
+- JWT
+- Arquitetura RESTfull 
 
 
-# *Gestão de horas laborais*
+# Gestão de horas laborais
 
 
 Esse portifólio foi construido com base nos registros presentes no [repositório](https://github.com/codecatss/API-BD3?tab=readme-ov-file#sobre) do GitHub onde esse projeto foi desenvolvido. Resumidamente esse projeto tem por objetivo o desenvolvimente de um sistema para a __gestão de funcionários__ de uma empresa.
@@ -22,7 +32,8 @@ O sistema foi pensado para ter a possibilidade de poder centralizar o lançament
 - Spring Boot
 - Hibernate
 - Postman 
-- Dbever        
+- Dbever      
+- PostgreSQL  
  
 ### Linguagens
 
