@@ -1,6 +1,31 @@
 # *Portfolio apresentado como requisito avaliativo para a disciplina de Metodologia Científica*
 
+| Developer | Willian Danko      |     [![Linkedin Badge](https://img.shields.io/badge/Linkedin-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/willian-danko-leite-caboski-5410741b4) [![GitHub Badge](https://img.shields.io/badge/GitHub-111217?style=flat-square&logo=github&logoColor=white)](https://github.com/DankoCaboski)
+
 Esse portifólio foi construido com base nos registros presentes no [repositório](https://github.com/codecatss/API-BD3?tab=readme-ov-file#sobre) do GitHub onde esse projeto foi desenvolvido. Resumidamente esse projeto tem por objetivo o desenvolvimente de um sistema para a __gestão de funcionários__ de uma empresa.
+
+### <details>
+
+<summary>Um pouco mais</summary>
+
+O sistema foi pensado para ter a possibilidade de poder centralizar o lançamento de horas trabalhadas dos funcionários daquela empresa. Os funcionarios dentro do sistema tem a possibilidade de centralizar o lançamento de suas horas trabalhadas e também monitorar o status de seus lançamentos. Os gestores podem fazer a gestão dos menbros de suas equipes, desde a inclusão e exclusão de membros as equipes, além de poder exportar relatórios sobre suas equipes. Já os administradores representavam o cargo de usário master no sistema, podendo fazer a demissão dos funcionarios e o controle dos gestores.
+</details>
+
+## Tecnologias Utilizadas
+
+### Tecnologias 
+
+- Spring Boot
+- Hibernate
+- Postman 
+- Dbever        
+ 
+### Linguagens
+
+- Java
+- Javascript
+- HTML & CSS
+
 
 ## Sobre a empresa
 
