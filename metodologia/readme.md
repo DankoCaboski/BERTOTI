@@ -7,22 +7,28 @@ Willian Danko, graduando em banco de dados
 ## Contribuições Pessoais
 Durante o desenvolvimento deste projeto, fui responsável pela otimização das chamadas ao backend e ao banco de dados, resultando em tempos de carregamento e respostas mais rápidos. Além disso, contribuí para o planejamento da arquitetura do lado do servidor, tornando o projeto mais escalável e seguro. Também participei do desenvolvimento de funcionalidades como a gestão de equipes, extração de relatórios e o lançamento de horas extras pelos colaboradores.
 
+- Otimização de requisições  
+- Construção de rotas independentes para consultas
+- Implementação de views no banco para simplificar 
+- Redução do trafego de dados em requisições do frontend
+- Implementação de regras de negócio no client side para redução de tempo de resposta
+
 ## Hard Skills Efetivamente Desenvolvidas
+- Data Transfer Object & ORM
+- Arquitetura RESTfull 
 - Spring security
 - JWT
-- Arquitetura RESTfull 
-
 
 # Gestão de horas laborais
 
-
 Esse portifólio foi construido com base nos registros presentes no [repositório](https://github.com/codecatss/API-BD3?tab=readme-ov-file#sobre) do GitHub onde esse projeto foi desenvolvido. Resumidamente esse projeto tem por objetivo o desenvolvimente de um sistema para a __gestão de funcionários__ de uma empresa.
 
-### <details>
+<details>
 
 <summary>Um pouco mais</summary>
 
 O sistema foi pensado para ter a possibilidade de poder centralizar o lançamento de horas trabalhadas dos funcionários daquela empresa. Os funcionarios dentro do sistema tem a possibilidade de centralizar o lançamento de suas horas trabalhadas e também monitorar o status de seus lançamentos. Os gestores podem fazer a gestão dos menbros de suas equipes, desde a inclusão e exclusão de membros as equipes, além de poder exportar relatórios sobre suas equipes. Já os administradores representavam o cargo de usário master no sistema, podendo fazer a demissão dos funcionarios e o controle dos gestores.
+
 </details>
 
 ## Tecnologias Utilizadas
