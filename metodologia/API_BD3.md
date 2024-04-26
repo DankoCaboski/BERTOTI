@@ -204,6 +204,9 @@ O projeto foi dividido em 17 User stories que tinham a função de compartimenta
 
 ## Sobre o projeto
 
+Fluxo de telas 
+
+![apiBd3](./assets/images/apiBd3.png)
 
 ![usuarios-adm](./assets/images/usuarios-adm.png)
 
