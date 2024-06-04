@@ -4,8 +4,12 @@ public class Estacao {
     public static Double press;
     
     public static void notifyObservers(){
-        Dashboard.update(temp, press);
-        Estatisticas.update(temp, press);
+        Dashboard dashboard = new Dashboard();
+        dashboard.update(temp, press);
+        dashboard.print();
+        Estatisticas estatisticas = new Estatisticas();
+        estatisticas.update(temp, press);
+        estatisticas.print();
 
     }
 
