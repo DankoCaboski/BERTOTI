@@ -1,2 +1,2 @@
 UML
-drawIO
+Strategy

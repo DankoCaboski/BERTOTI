@@ -1,1 +1,1 @@
-md for singleton
+![img](./Assets/Singleton_UML.svg)
