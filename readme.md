@@ -1,4 +1,4 @@
--# BERTOTI 
+# BERTOTI 
 A engenharia de software consiste na preocupação com a escalabilidade de uma apliação, na sua versatilidade e na sua viabilidade de implantação em desssa em diferentes contextos, além de se minimixar as consequencias negativas e maximisar os os ganhjos com cada decisão tecnica tomada ao longo do desenvolvimento do projeto. 
 
 1- O que é software? Qual relação com programação?
